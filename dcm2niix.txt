@@ -1,0 +1,36 @@
+#!/bin/bash
+
+for i in `seq -w 1 num`; do 
+#change the num
+    subi="sub$i"
+    echo "starting processing sub$i"
+
+#check if the file is exist    
+    if [! -d /Users/this_is_not_a_macbook/desktop/filename/FunNii]; then
+         mkdir -p /Users/this_is_not_a_macbook/desktop/filename/FunNii
+    fi
+#dcm2niix
+    dcm2niix -f '%f' -p y -z y -o '/Users/this_is_not_a_macbook/desktop/filename/FunNii' \
+ '/Users/this_is_not_a_macbook/desktop/filename/sub$i'
+
+done
+
+: ' #!/bin/bash
+
+num=10
+
+for i in $(seq -w 1 $num); do
+    subi="sub$i"
+    echo "Starting processing $subi"
+    
+    # Check if the output directory exists
+    if [ ! -d "/Users/this_is_not_a_macbook/desktop/parent_dir/FunNii/$subi" ]; then
+        echo "Creating directory /Users/this_is_not_a_macbook/desktop/parent_dir/FunNii/$subi"
+        mkdir -p "/Users/this_is_not_a_macbook/desktop/parent_dir/FunNii/$subi"
+    else
+        echo "Directory /Users/this_is_not_a_macbook/desktop/parent_dir/FunNii/$subi already exists"
+    fi
+    
+    # Convert DICOM to NIfTI
+    dcm2niix -f '%f' -p y -z y -o "/Users/this_is_not_a_macbook/desktop/parent_dir/FunNii/$subi" "/Users/this_is_not_a_macbook/desktop/parent_dir/$subi"
+done'
