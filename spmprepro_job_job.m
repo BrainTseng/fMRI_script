@@ -1,4 +1,3 @@
-% It is used during the Scripting chapter of the SPM walkthrough (https://andysbrainbook.readthedocs.io/en/latest/SPM/SPM_Short_Course/SPM_06_Scripting.html)
 
 subjects = [01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26];
 
